@@ -1,0 +1,19 @@
+# Entornos Virtuales
+venv/
+env/
+.venv/
+
+# Credenciales y Variables de Entorno (CRÍTICO)
+.env
+
+# Archivos compilados de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Configuraciones locales de VS Code
+.vscode/
+
+# Archivos de sistema operativo
+.DS_Store
+Thumbs.db
