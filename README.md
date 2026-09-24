@@ -1,4 +1,4 @@
-# Observatorio de Prensa: Análisis de Agenda Setting y Framing con IA
+# Observatorio de Prensa: Análisis de Agenda Setting y Framing de Medios Chilenos con IA
 
 Pipeline de datos **end-to-end y serverless** que extrae titulares de medios independientes chilenos, los clasifica con Inteligencia Artificial generativa y los visualiza en un dashboard interactivo para estudiar la **agenda mediática (Agenda Setting)** y el **encuadre (Framing)** del debate público.
 
