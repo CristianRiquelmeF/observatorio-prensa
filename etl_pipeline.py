@@ -85,12 +85,34 @@ def deduplicar_batch(noticias: list) -> list:
 def procesar_nlp_gemini(noticia: dict) -> dict:
     """Llama a Gemini usando el nuevo SDK."""
     prompt = f"""
-    Eres un sociólogo experto en análisis de encuadre (framing) en medios de comunicación chilenos.
-    Analiza el siguiente titular de prensa y clasifícalo según el esquema solicitado.
-    
-    Titular: "{noticia['titular']}"
-    Medio: {noticia['medio']}
-    """
+Actúa como un sociólogo experto en análisis de discurso y agenda setting.
+Analiza el siguiente titular y enlace de una noticia:
+Titular: {item['titular']}
+Enlace: {item['enlace']}
+
+Debes clasificar la noticia ESTRICTAMENTE en UNA de las siguientes categorías exactas (no inventes nuevas, elige la que mejor encaje):
+- Política Nacional
+- Economía y Negocios
+- Seguridad y Orden Público
+- Movimientos Sociales
+- Derechos Humanos
+- Política Internacional
+- Cultura y Espectáculos
+- Deportes
+- Salud Pública
+- Educación
+- Ciencia y Tecnología
+- Medio Ambiente
+- Infraestructura y Transporte
+- Justicia y Tribunales
+- Medios de Comunicación
+- Política Social y Pensiones
+- Política Migratoria
+- Misceláneo / Otro
+
+Devuelve un JSON válido con estas claves:
+"categoria_sociologica" (usa solo la lista anterior), "sentimiento_titular" (Positivo/Negativo/Neutro), "polarizacion" (Alta/Media/Baja).
+"""
     try:
         respuesta = client.models.generate_content(
             model='gemini-3.5-flash-lite',
@@ -102,9 +124,13 @@ def procesar_nlp_gemini(noticia: dict) -> dict:
             ),
         )
         analisis = json.loads(respuesta.text)
+        # Esperar 5 segundos para no saturar la capa gratuita de la API
+        time.sleep(5)
         return {**noticia, **analisis}
     except Exception as e:
         print(f"Error procesando NLP para {noticia['enlace']}: {e}")
+        # Esperar 5 segundos para no saturar la capa gratuita de la API
+        time.sleep(5)
         return None
 
 def cargar_en_supabase(datos_procesados: list):
