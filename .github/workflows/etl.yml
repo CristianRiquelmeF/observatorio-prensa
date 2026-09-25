@@ -3,7 +3,7 @@ name: Observatorio Prensa ETL
 on:
   schedule:
     # Ejecuta todos los días a las 13:00 AM UTC (10:00 AM en Chile continental)
-    - cron: '50 10 * * *'
+    - cron: '55 13 * * *'
   workflow_dispatch: # Activa un botón en GitHub para ejecutarlo manualmente cuando quieras
 
 jobs:
