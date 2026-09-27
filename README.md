@@ -164,9 +164,10 @@ Cualquier pregunta que se pueda expresar como *"texto de entrada → variables c
 - **Cuotas:** la capa gratuita sirve para volúmenes pequeños; con más volumen conviene procesar por lotes o usar un plan de pago.
 - **Comparabilidad:** si cambias la taxonomía o el modelo, reprocesa el histórico completo para no mezclar criterios.
 
----
+## Autor
 
-
+Cristian Riquelme — [GitHub: CristianRiquelmeF](https://github.com/CristianRiquelmeF)
+Sociólogo y Analista de Datos/BI.
 **Proyecto independiente desarrollado por Cristian Riquelme** para su portafolio profesional de Data Engineering y Análisis de Datos. Demuestra el diseño e implementación de una solución completa: extracción web, modelamiento de bases de datos, uso aplicado de APIs de IA, automatización con CI/CD y Business Intelligence, articulados con una pregunta de investigación de las ciencias sociales.
 
 🔗 [LinkedIn](https://linkedin.com/in/cristianriquelmef) · [GitHub](https://github.com/CristianRiquelmeF) · [Portafolio](https://cristianriquelmef.github.io)
